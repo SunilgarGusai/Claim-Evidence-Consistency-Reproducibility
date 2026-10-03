@@ -1,0 +1,108 @@
+name: Repository verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Check required reviewer-facing files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f QUICKSTART.md
+          test -f CITATION.cff
+          test -f LICENSE
+          test -f THIRD_PARTY_LICENSES.md
+          test -f requirements.txt
+          test -f environment.yml
+          test -f pytest.ini
+          test -f REPOSITORY_MANIFEST.csv
+          test -f config/study_config.yaml
+          test -f docs/METHOD_PROTOCOL.md
+          test -f docs/FROZEN_RESULTS.md
+          test -f docs/REPRODUCIBILITY.md
+          test -f docs/CLAIM_BOUNDARIES.md
+          test -f docs/COMPUTATIONAL_VALIDATION.md
+          test -f docs/DATA_PROVENANCE.md
+          test -f docs/assets/repository-banner.svg
+          test -f docs/assets/claim-evidence-framework.svg
+          test -f docs/assets/certificate-anatomy.svg
+          test -f docs/assets/complexity-landscape.svg
+          test -f scripts/validate_public_artifact.py
+          test -f scripts/reproduce_validation.py
+          test -f scripts/generate_figures.py
+          test -f src/automata_support.py
+          test -f src/tree_dp.py
+          test -f src/treewidth_dp.py
+          test -f src/fvs.py
+          test -f src/evidence_cover.py
+          test -f src/certificates.py
+          test -f tests/test_algorithms.py
+          test -f results/frozen/summary.json
+
+      - name: Python syntax check
+        run: |
+          python -m compileall -q src scripts tests
+
+      - name: Run reference tests
+        run: pytest -q
+
+      - name: Validate curated artifact and frozen invariants
+        run: python scripts/validate_public_artifact.py
+
+      - name: Regenerate deterministic validation
+        run: python scripts/reproduce_validation.py > /tmp/reproduction.log
+
+      - name: Compare reproduced logical summaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          frozen=json.loads(Path('results/frozen/summary.json').read_text())
+          fresh=json.loads(Path('results/reproduced/summary.json').read_text())
+          assert frozen['seed']==fresh['seed']==20260712
+          for block in ['tree_validation','fvs_validation','correction_validation','cover']:
+              assert frozen[block].keys()==fresh[block].keys()
+          assert all(v['agreement']==1.0 for v in fresh['tree_validation'].values())
+          assert all(v['agreement']==1.0 for v in fresh['fvs_validation'].values())
+          assert max(v['max_abs_error'] for v in fresh['correction_validation'].values()) < 1e-15
+          assert sum(v['instances'] for v in fresh['cover'].values()) == 180
+          print('PASS: reproduced logical invariants')
+          PY
+
+      - name: Regenerate scientific figures
+        run: |
+          python scripts/generate_figures.py
+          test -f figures/claim-evidence-framework.svg
+          test -f figures/complexity-landscape.svg
+          test -f figures/certificate-anatomy.svg
+
+      - name: Summary
+        run: |
+          echo '## Claim–Evidence repository verification' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Environment installation: PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Curated repository structure: PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Python syntax: PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Reference tests: 12/12 PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Frozen numerical invariants: PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Deterministic reproduction: PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Scientific figure regeneration: PASS' >> "$GITHUB_STEP_SUMMARY"
