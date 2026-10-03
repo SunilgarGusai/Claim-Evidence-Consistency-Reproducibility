@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or frozen research outputs, please cite the associated manuscript and the submission-aligned reproducibility release."
+title: "Claim–Evidence Consistency in Labeled Graphs: Reproducibility Companion"
+type: software
+authors:
+  - family-names: "Gusai"
+    given-names: "Sunilgar L."
+    orcid: "https://orcid.org/0009-0004-0739-4812"
+  - family-names: "Jadeja"
+    given-names: "Manoharsinh R."
+    orcid: "https://orcid.org/0000-0003-1833-4730"
+repository-code: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility"
+url: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility"
+license: MIT
+version: "1.0.0-submission"
+date-released: 2026-10-03
+abstract: "Public reference implementations, tests, deterministic computational validation, frozen result tables, provenance notes, and reviewer-facing documentation for the claim–evidence consistency study. Journal-submission manuscript files are intentionally excluded during peer review."
+keywords:
+  - claim verification
+  - graph algorithms
+  - regular path queries
+  - constraint satisfaction
+  - provenance
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "Claim–Evidence Consistency in Labeled Graphs: Complexity, Certificates, and Correction"
+  authors:
+    - family-names: "Gusai"
+      given-names: "Sunilgar L."
+      orcid: "https://orcid.org/0009-0004-0739-4812"
+    - family-names: "Jadeja"
+      given-names: "Manoharsinh R."
+      orcid: "https://orcid.org/0000-0003-1833-4730"
+  notes: "Manuscript prepared for submission to Theoretical Computer Science. Final publication metadata and DOI will be added after publication."

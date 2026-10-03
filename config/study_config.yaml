@@ -1,0 +1,29 @@
+seed: 20260712
+semantics:
+  evidence_paths: finite_walks
+  reliability_aggregation: bottleneck_minimum
+validation:
+  tree_exactness:
+    domain_size: 4
+    claim_sizes: [4, 6, 8, 10]
+    repetitions: 25
+  worst_case_timing:
+    domain_size: 3
+    claim_sizes: [6, 8, 10, 12, 13]
+    repetitions: 5
+  tree_scalability:
+    domain_sizes: [4, 8, 12]
+    claim_sizes: [50, 200, 1000, 5000]
+    repetitions: 8
+  feedback_vertex_set_exactness:
+    domain_size: 3
+    claim_sizes: [5, 7, 9]
+    feedback_vertex_set_size: 1
+    repetitions: 20
+  correction_exactness:
+    domain_size: 3
+    claim_sizes: [4, 6, 8]
+    repetitions: 20
+  evidence_cover:
+    universe_sizes: [8, 10, 12, 14, 16, 18]
+    repetitions: 30
