@@ -1,0 +1,20 @@
+{
+  "claim_graph": {
+    "vertices": ["model", "method", "dataset", "result"],
+    "arcs": [
+      ["model", "uses", "method"],
+      ["method", "evaluated_on", "dataset"],
+      ["model", "achieves", "result"]
+    ]
+  },
+  "evidence_graph": {
+    "vertices": ["paper", "algorithm", "benchmark", "reported_score", "correction_notice"],
+    "arcs": [
+      ["paper", "describes", "algorithm"],
+      ["algorithm", "tested_on", "benchmark"],
+      ["paper", "reports", "reported_score"],
+      ["correction_notice", "retracts", "reported_score"]
+    ]
+  },
+  "interpretation": "The first two claims are supported; the third is ambiguous because both a support and a contradiction witness exist."
+}
