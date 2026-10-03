@@ -157,7 +157,7 @@ See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inte
 
 **Current status: manuscript-submission reproducibility repository.**
 
-The intended frozen public snapshot is `v1.0.0-submission`. Publication metadata and article DOI can be added to `CITATION.cff` after publication. The live `main` branch remains reviewer-facing; a frozen release should be used when citing the exact submitted computational state.
+The frozen public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact submitted computational state.
 
 ## Authors
 
