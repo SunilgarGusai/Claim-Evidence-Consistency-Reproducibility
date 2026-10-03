@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
+<rect width="1200" height="220" rx="18" fill="#f5f8fb"/><rect x="20" y="20" width="1160" height="180" rx="16" fill="white" stroke="#183B56" stroke-width="2"/>
+<g stroke="#2B6F9F" stroke-width="3" fill="#DCEEF8"><circle cx="95" cy="110" r="28"/><circle cx="190" cy="75" r="28"/><circle cx="190" cy="145" r="28"/><path d="M123 100 L160 83 M123 120 L160 137" fill="none"/></g>
+<g stroke="#2E7D5B" stroke-width="3" fill="#DDF2EC"><circle cx="1010" cy="75" r="26"/><circle cx="1105" cy="110" r="26"/><circle cx="1010" cy="145" r="26"/><path d="M1036 83 L1078 102 M1036 137 L1078 118" fill="none"/></g>
+<text x="600" y="92" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#183B56">Claim–Evidence Consistency in Labeled Graphs</text>
+<text x="600" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#506675">Complexity • verification certificates • evidence selection • correction</text>
+<text x="600" y="166" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#6B747C">Public reproducibility companion</text>
+</svg>
