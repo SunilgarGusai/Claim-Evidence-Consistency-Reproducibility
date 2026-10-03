@@ -1,0 +1,51 @@
+path,category,role
+.github/workflows/repository-validation.yml,ci,Automated repository and numerical verification
+CITATION.cff,citation,Citation metadata and preferred manuscript citation
+LICENSE,licensing,Original-code MIT license
+QUICKSTART.md,reproducibility,Minimal reviewer-facing reproduction commands
+README.md,landing,Scientific overview and reviewer navigation
+THIRD_PARTY_LICENSES.md,licensing,Dependency and synthetic-data licensing boundary
+config/study_config.yaml,configuration,Frozen semantics and computational-validation design
+docs/CLAIM_BOUNDARIES.md,interpretation,Supported and unsupported scientific claims
+docs/COMPUTATIONAL_VALIDATION.md,validation,Exactness and scaling validation guide
+docs/DATA_PROVENANCE.md,provenance,Synthetic data lineage and licensing
+docs/FROZEN_RESULTS.md,results,Headline frozen-result inventory and result-to-code map
+docs/LITERATURE_CONTEXT.md,literature,High-level prior-art and novelty boundary
+docs/METHOD_PROTOCOL.md,method,Frozen public formal/computational protocol
+docs/REPRODUCIBILITY.md,reproducibility,Public/release/submission artifact boundary
+docs/SUBMISSION_METADATA.md,metadata,Public manuscript/repository metadata
+docs/assets/certificate-anatomy.svg,visual,Machine-checkable certificate anatomy
+docs/assets/claim-evidence-framework.svg,visual,Formal verification framework
+docs/assets/complexity-landscape.svg,visual,Complexity and tractability map
+docs/assets/repository-banner.svg,visual,Repository hero banner
+environment.yml,environment,Conda environment specification
+examples/README.md,data,Illustrative example description
+examples/illustrative_instance.json,data,Synthetic illustrative claim/evidence instance
+figures/README.md,figures,Figure regeneration guide
+manuscript/README.md,metadata,Submission-file exclusion note
+pytest.ini,verification,Pytest configuration
+requirements.txt,environment,Pinned pip dependencies
+results/frozen/correction_validation.csv,results,Frozen machine-readable computational output
+results/frozen/cover_results.csv,results,Frozen machine-readable computational output
+results/frozen/fvs_validation.csv,results,Frozen machine-readable computational output
+results/frozen/summary.json,results,Frozen machine-readable computational output
+results/frozen/tree_scalability.csv,results,Frozen machine-readable computational output
+results/frozen/tree_validation.csv,results,Frozen machine-readable computational output
+results/frozen/worst_case_timing.csv,results,Frozen machine-readable computational output
+scripts/generate_figures.py,figures,Reviewer-facing figure regeneration
+scripts/reproduce_validation.py,verification,Deterministic computational reproduction entry point
+scripts/validate_public_artifact.py,verification,Curated artifact and invariant validator
+src/__init__.py,code,Reference algorithm implementation
+src/alignment.py,code,Reference algorithm implementation
+src/automata_support.py,code,Reference algorithm implementation
+src/certificates.py,code,Reference algorithm implementation
+src/domain_pruning.py,code,Reference algorithm implementation
+src/evidence_cover.py,code,Reference algorithm implementation
+src/experiments.py,code,Reference algorithm implementation
+src/fvs.py,code,Reference algorithm implementation
+src/model.py,code,Reference algorithm implementation
+src/scoring.py,code,Reference algorithm implementation
+src/tree_dp.py,code,Reference algorithm implementation
+src/treewidth_dp.py,code,Reference algorithm implementation
+tests/conftest.py,verification,Reference tests
+tests/test_algorithms.py,verification,Reference tests
