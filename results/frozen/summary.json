@@ -1,0 +1,48 @@
+{
+  "seed": 20260712,
+  "tree_validation": {
+    "4": {"instances":25,"consistent_fraction":1.0,"agreement":1.0,"median_bruteforce_ms":0.010464999832038302,"median_tree_dp_ms":0.029532999633374857},
+    "6": {"instances":25,"consistent_fraction":1.0,"agreement":1.0,"median_bruteforce_ms":0.003665999884105986,"median_tree_dp_ms":0.04680900019593537},
+    "8": {"instances":25,"consistent_fraction":0.96,"agreement":1.0,"median_bruteforce_ms":0.04159099989919923,"median_tree_dp_ms":0.06697900016661151},
+    "10":{"instances":25,"consistent_fraction":0.92,"agreement":1.0,"median_bruteforce_ms":12.76816300014616,"median_tree_dp_ms":0.09207600032823393}
+  },
+  "worst_case": {
+    "6":{"instances":5,"median_bruteforce_ms":0.3280629998698714,"median_tree_dp_ms":0.018536999959906098},
+    "8":{"instances":5,"median_bruteforce_ms":3.487846999632893,"median_tree_dp_ms":0.024435999876004644},
+    "10":{"instances":5,"median_bruteforce_ms":32.37679999983811,"median_tree_dp_ms":0.05138500000612112},
+    "12":{"instances":5,"median_bruteforce_ms":330.35208599994803,"median_tree_dp_ms":0.07127500020942534},
+    "13":{"instances":5,"median_bruteforce_ms":1002.7012529999411,"median_tree_dp_ms":0.07660299979761476}
+  },
+  "scalability": {
+    "50-4":{"instances":8,"median_dp_ms":0.40931350008577283,"median_pruned_fraction":0.0,"consistent_fraction":1.0},
+    "200-4":{"instances":8,"median_dp_ms":1.5880285000093863,"median_pruned_fraction":0.179375,"consistent_fraction":1.0},
+    "1000-4":{"instances":8,"median_dp_ms":9.400012999776663,"median_pruned_fraction":0.0,"consistent_fraction":1.0},
+    "5000-4":{"instances":8,"median_dp_ms":52.308433000007426,"median_pruned_fraction":0.0875,"consistent_fraction":0.875},
+    "50-8":{"instances":8,"median_dp_ms":1.1931120002373063,"median_pruned_fraction":0.12625,"consistent_fraction":1.0},
+    "200-8":{"instances":8,"median_dp_ms":4.619798500016259,"median_pruned_fraction":0.2,"consistent_fraction":1.0},
+    "1000-8":{"instances":8,"median_dp_ms":25.970710999899893,"median_pruned_fraction":0.16975,"consistent_fraction":0.875},
+    "5000-8":{"instances":8,"median_dp_ms":149.50475649993678,"median_pruned_fraction":0.1446875,"consistent_fraction":1.0},
+    "50-12":{"instances":8,"median_dp_ms":2.3212285000226984,"median_pruned_fraction":0.23666666666666666,"consistent_fraction":1.0},
+    "200-12":{"instances":8,"median_dp_ms":9.822980999842912,"median_pruned_fraction":0.2125,"consistent_fraction":1.0},
+    "1000-12":{"instances":8,"median_dp_ms":52.19566199980363,"median_pruned_fraction":0.23670833333333333,"consistent_fraction":1.0},
+    "5000-12":{"instances":8,"median_dp_ms":271.8590145000235,"median_pruned_fraction":0.20585833333333334,"consistent_fraction":1.0}
+  },
+  "fvs_validation": {
+    "5":{"instances":20,"agreement":1.0,"median_bruteforce_ms":0.036638499977925676,"median_fvs_ms":0.032662999956301064},
+    "7":{"instances":20,"agreement":1.0,"median_bruteforce_ms":0.15776750001350592,"median_fvs_ms":0.050218999831486144},
+    "9":{"instances":20,"agreement":1.0,"median_bruteforce_ms":0.7262800002081349,"median_fvs_ms":0.0672339997436211}
+  },
+  "correction_validation": {
+    "4":{"instances":20,"max_abs_error":4.440892098500626e-16,"mean_abs_error":7.771561172376095e-17},
+    "6":{"instances":20,"max_abs_error":8.881784197001252e-16,"mean_abs_error":2.6645352591003756e-16},
+    "8":{"instances":20,"max_abs_error":8.881784197001252e-16,"mean_abs_error":3.3306690738754696e-16}
+  },
+  "cover": {
+    "8":{"instances":30,"mean_ratio":1.0777504618544027,"median_ratio":1.0,"p95_ratio":1.283197475677097,"max_ratio":1.395391463733962},
+    "10":{"instances":30,"mean_ratio":1.0763080222052548,"median_ratio":1.020990312163617,"p95_ratio":1.2476657329598506,"max_ratio":1.3492626979792466},
+    "12":{"instances":30,"mean_ratio":1.157305935699838,"median_ratio":1.151114051238924,"p95_ratio":1.4173684210526316,"max_ratio":1.5705143398909693},
+    "14":{"instances":30,"mean_ratio":1.1391942688520904,"median_ratio":1.140124544363581,"p95_ratio":1.355079991689175,"max_ratio":1.4407210538479316},
+    "16":{"instances":30,"mean_ratio":1.0996383629723883,"median_ratio":1.0627373270270837,"p95_ratio":1.271589868782423,"max_ratio":1.3664897299792291},
+    "18":{"instances":30,"mean_ratio":1.1324176008211648,"median_ratio":1.1145403563713474,"p95_ratio":1.3163064833005893,"max_ratio":1.331854043392505}
+  }
+}
