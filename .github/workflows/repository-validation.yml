@@ -6,6 +6,9 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -95,6 +98,20 @@ jobs:
           test -f figures/claim-evidence-framework.svg
           test -f figures/complexity-landscape.svg
           test -f figures/certificate-anatomy.svg
+
+      - name: Freeze submission release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.0.0-submission >/dev/null 2>&1; then
+            echo 'v1.0.0-submission already exists; leaving it unchanged.'
+          else
+            gh release create v1.0.0-submission \
+              --target "$GITHUB_SHA" \
+              --title "v1.0.0-submission" \
+              --notes "Frozen public computational snapshot aligned with the manuscript submission. Includes reference algorithms, 12 tests, deterministic validation outputs, provenance documentation, and reviewer-facing scientific figures. Journal-submission manuscript files are intentionally excluded."
+          fi
 
       - name: Summary
         run: |
