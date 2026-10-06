@@ -15,7 +15,7 @@
   <a href="CITATION.cff"><img src="https://img.shields.io/badge/citation-CITATION.cff-blue.svg" alt="Citation metadata"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-blue.svg" alt="MIT license"/></a>
   <img src="https://img.shields.io/badge/tests-12%20passed-success.svg" alt="12 tests passed"/>
-  <img src="https://img.shields.io/badge/status-manuscript%20submission-orange.svg" alt="Submission status"/>
+  <img src="https://img.shields.io/badge/status-submission--ready-orange.svg" alt="Submission-ready status"/>
 </p>
 
 <p align="center">
@@ -74,7 +74,7 @@ The upstream extraction of claims, entities, relations, candidate domains, prove
 
 ## Frozen computational validation
 
-The submission-aligned artifact records:
+The submission-ready artifact records:
 
 - **12 / 12** unit tests passing;
 - **100 / 100** tree consistency decisions agreeing with exhaustive alignment search;
@@ -89,7 +89,7 @@ Machine-readable values are in [`results/frozen/`](results/frozen/) and summariz
 
 ## Reproducibility
 
-This repository is an **auditable reviewer-facing scientific artifact**, not a mirror of the private journal-submission package.
+This repository is an **auditable scientific artifact**, not a mirror of the private manuscript package.
 
 ```bash
 conda env create -f environment.yml
@@ -103,7 +103,7 @@ python scripts/generate_figures.py
 
 The same core checks run in GitHub Actions on pushes and pull requests to `main`.
 
-The submitted manuscript PDF/LaTeX source, cover letter, graphical-abstract submission file, author photographs, and journal-portal files are intentionally excluded during peer review. See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
+The manuscript PDF/LaTeX source, cover letter, graphical-abstract file, author photographs, and journal-portal files are intentionally excluded from the public repository. See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
 ## Reviewer map
 
@@ -136,7 +136,7 @@ The submitted manuscript PDF/LaTeX source, cover letter, graphical-abstract subm
 ├── examples/                 small synthetic illustrative instance
 ├── figures/                  regenerated computational figures
 ├── manuscript/               note explaining submission-file exclusion
-├── results/frozen/           machine-readable submission-aligned outputs
+├── results/frozen/           machine-readable frozen outputs
 ├── scripts/                  validation and regeneration entry points
 ├── src/                      reference algorithms
 ├── tests/                    unit and algorithmic checks
@@ -155,9 +155,9 @@ See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inte
 
 ## Release status
 
-**Current status: manuscript-submission reproducibility repository.**
+**Current status: submission-ready reproducibility repository.**
 
-The frozen public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact submitted computational state.
+The frozen public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
 
 ## Authors
 
