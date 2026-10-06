@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or frozen research outputs, please cite the associated manuscript and the submission-aligned reproducibility release."
+message: "If you use this software or frozen research outputs, please cite the associated manuscript and the submission-ready reproducibility release."
 title: "Claim–Evidence Consistency in Labeled Graphs: Reproducibility Companion"
 type: software
 authors:
@@ -14,7 +14,7 @@ url: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibilit
 license: MIT
 version: "1.0.0-submission"
 date-released: 2026-10-03
-abstract: "Public reference implementations, tests, deterministic computational validation, frozen result tables, provenance notes, and reviewer-facing documentation for the claim–evidence consistency study. Journal-submission manuscript files are intentionally excluded during peer review."
+abstract: "Public reference implementations, tests, deterministic computational validation, frozen result tables, provenance notes, and reviewer-facing documentation for the claim–evidence consistency study. Manuscript and journal-portal files are intentionally excluded from the public reproducibility release."
 keywords:
   - claim verification
   - graph algorithms
