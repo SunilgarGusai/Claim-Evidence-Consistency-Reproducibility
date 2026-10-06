@@ -4,22 +4,22 @@
 
 The `main` branch contains the reference algorithms, tests, deterministic experiment generator, frozen machine-readable results, environment specifications, example inputs, documentation, and figure-regeneration utilities needed to inspect and validate the computational component of the study.
 
-## Frozen submission layer
+## Frozen reproducibility layer
 
-The intended `v1.0.0-submission` GitHub release should preserve the exact public computational snapshot associated with the submitted manuscript. Reviewers should use the frozen release when they need an immutable reference rather than the live branch.
+The `v1.0.0-submission` archival tag preserves the exact public computational snapshot prepared for manuscript submission. Readers and reviewers can use the frozen release when they need an immutable reference rather than the live branch.
 
-## Intentionally excluded during peer review
+## Intentionally excluded from the public repository
 
 The public repository does **not** mirror:
 
-- submitted manuscript PDF;
+- manuscript PDF;
 - LaTeX manuscript source / journal class bundle;
 - cover letter;
-- graphical-abstract journal submission file;
+- graphical-abstract file;
 - author photographs;
 - Editorial Manager forms or correspondence.
 
-This separation prevents the public reproducibility artifact from becoming a duplicate journal-submission package.
+This separation prevents the public reproducibility artifact from becoming a duplicate private manuscript package.
 
 ## Reproduction levels
 
