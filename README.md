@@ -157,7 +157,7 @@ See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inte
 
 **Current status: submission-ready reproducibility repository.**
 
-The original public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
+The updated submission snapshot is [`v1.0.1-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.1-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
 
 ## Authors
 
@@ -171,3 +171,6 @@ Citation metadata are supplied in [`CITATION.cff`](CITATION.cff). Please cite th
 ## License
 
 Original project code is released under the [`MIT License`](LICENSE). Synthetic example data are released under CC BY 4.0; third-party software retains its own terms. See [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+
+
+**Verifier update:** The strict certificate interface checks provenance, reliability thresholds, and the absence of a qualifying contradiction; see `build_full_certificate` and `verify_full_certificate` in `src/certificates.py`. The previous `v1.0.0-submission` remains archived.
