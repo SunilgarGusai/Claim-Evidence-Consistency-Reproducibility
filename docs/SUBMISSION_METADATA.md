@@ -11,4 +11,4 @@
 
 **Public repository:** https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility
 
-**Submission-aligned release:** `v1.0.0-submission` (to be frozen after the public branch validation passes)
+**Submission-aligned release:** `v1.0.1-submission` (validated release after expanded certificate checks)
