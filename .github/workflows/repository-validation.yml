@@ -104,12 +104,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.0-submission >/dev/null 2>&1; then
-            echo 'v1.0.0-submission already exists; leaving it unchanged.'
+          if gh release view v1.0.1-submission >/dev/null 2>&1; then
+            echo 'v1.0.1-submission already exists; leaving it unchanged.'
           else
-            gh release create v1.0.0-submission \
+            gh release create v1.0.1-submission \
               --target "$GITHUB_SHA" \
-              --title "v1.0.0-submission" \
+              --title "v1.0.1-submission" \
               --notes "Frozen public computational snapshot aligned with the manuscript submission. Includes reference algorithms, 12 tests, deterministic validation outputs, provenance documentation, and reviewer-facing scientific figures. Journal-submission manuscript files are intentionally excluded."
           fi
 
