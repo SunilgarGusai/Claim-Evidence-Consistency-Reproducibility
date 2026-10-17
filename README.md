@@ -14,7 +14,7 @@
   <a href="requirements.txt"><img src="https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white" alt="Python 3.12"/></a>
   <a href="CITATION.cff"><img src="https://img.shields.io/badge/citation-CITATION.cff-blue.svg" alt="Citation metadata"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-blue.svg" alt="MIT license"/></a>
-  <img src="https://img.shields.io/badge/tests-12%20passed-success.svg" alt="12 tests passed"/>
+  <img src="https://img.shields.io/badge/tests-14%20passed-success.svg" alt="14 tests passed"/>
   <img src="https://img.shields.io/badge/status-submission--ready-orange.svg" alt="Submission-ready status"/>
 </p>
 
@@ -76,7 +76,7 @@ The upstream extraction of claims, entities, relations, candidate domains, prove
 
 The submission-ready artifact records:
 
-- **12 / 12** unit tests passing;
+- **14 / 14** unit tests passing;
 - **100 / 100** tree consistency decisions agreeing with exhaustive alignment search;
 - **60 / 60** supplied-feedback-set decisions agreeing with exhaustive search;
 - **60 / 60** weighted-correction instances agreeing with exhaustive optimization;
@@ -115,7 +115,7 @@ The manuscript PDF/LaTeX source, cover letter, graphical-abstract file, author p
 | Tree exact algorithm | [`src/tree_dp.py`](src/tree_dp.py) |
 | Bounded-treewidth implementation | [`src/treewidth_dp.py`](src/treewidth_dp.py) |
 | Feedback-vertex-set implementation | [`src/fvs.py`](src/fvs.py) |
-| Certificate construction/checking | [`src/certificates.py`](src/certificates.py) |
+| Certificate construction/checking (including full reliability/provenance semantics) | [`src/certificates.py`](src/certificates.py) |
 | Evidence-cover algorithms | [`src/evidence_cover.py`](src/evidence_cover.py) |
 | Reproduce frozen numerical validation | [`scripts/reproduce_validation.py`](scripts/reproduce_validation.py) |
 | Claim and interpretation boundaries | [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) |
@@ -157,7 +157,7 @@ See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inte
 
 **Current status: submission-ready reproducibility repository.**
 
-The frozen public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
+The original public snapshot is [`v1.0.0-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
 
 ## Authors
 
