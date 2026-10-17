@@ -119,7 +119,7 @@ jobs:
           echo '- Environment installation: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Curated repository structure: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Python syntax: PASS' >> "$GITHUB_STEP_SUMMARY"
-          echo '- Reference tests: 12/12 PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Reference tests: 14/14 PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Frozen numerical invariants: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Deterministic reproduction: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Scientific figure regeneration: PASS' >> "$GITHUB_STEP_SUMMARY"
