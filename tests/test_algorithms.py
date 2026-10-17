@@ -115,3 +115,36 @@ def test_feedback_vertex_set_solver_matches_bruteforce_on_cycle():
     fvs=solve_with_feedback_vertex_set(c,support,[0])
     assert (brute is None)==(fvs is None)
     assert fvs is None or is_consistent(c,fvs,support)
+
+
+def test_full_certificate_provenance_threshold_and_contradiction():
+    import copy
+    from src.certificates import build_full_certificate, verify_full_certificate
+    c=ClaimGraph(('u','v'),(('u','r','v'),),{'u':('x',),'v':('y',)})
+    a=('x','a','z'); b=('z','b','y'); conflict=('x','c','y')
+    e=EvidenceGraph(('x','z','y'),(a,b,conflict),
+      reliability={a:.9,b:.8,conflict:.2},
+      provenance={a:'record:1',b:'record:2',conflict:'record:3'})
+    pos={'r':NFA.word(('a','b'))};neg={'r':NFA.word(('c',))}
+    cert=build_full_certificate(c,e,{'u':'x','v':'y'},pos,neg,{'r':.75},{'r':.5})
+    check=lambda obj,pt=.75,nt=.5:verify_full_certificate(c,e,obj,pos,neg,{'r':pt},{'r':nt})
+    assert check(cert)
+    bad=copy.deepcopy(cert);bad['entries'][0]['edges'][0]['provenance']='wrong'
+    assert not check(bad)
+    assert not check(cert,pt=.85)
+    assert not check(cert,nt=.15)
+
+
+def test_full_certificate_missing_metadata_and_missing_negative_automaton():
+    import pytest
+    from src.certificates import build_full_certificate,verify_full_certificate
+    c=ClaimGraph(('u','v'),(('u','r','v'),),{'u':('x',),'v':('y',)})
+    arc=('x','a','y')
+    pos={'r':NFA.word(('a',))};neg={'r':NFA.word(('c',))}
+    incomplete=EvidenceGraph(('x','y'),(arc,),reliability={arc:.9})
+    with pytest.raises(ValueError):
+        build_full_certificate(c,incomplete,{'u':'x','v':'y'},pos,neg,{'r':.7},{'r':.5})
+    e=EvidenceGraph(('x','y'),(arc,),reliability={arc:.9},provenance={arc:'record:1'})
+    cert=build_full_certificate(c,e,{'u':'x','v':'y'},pos,neg,{'r':.7},{'r':.5})
+    assert verify_full_certificate(c,e,cert,pos,neg,{'r':.7},{'r':.5})
+    assert not verify_full_certificate(c,e,cert,pos,{}, {'r':.7},{'r':.5})
