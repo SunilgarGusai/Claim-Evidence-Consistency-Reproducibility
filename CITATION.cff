@@ -10,10 +10,10 @@ authors:
     given-names: "Manoharsinh R."
     orcid: "https://orcid.org/0000-0003-1833-4730"
 repository-code: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility"
-url: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.0-submission"
+url: "https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.1-submission"
 license: MIT
-version: "1.0.0-submission"
-date-released: 2026-10-03
+version: "1.0.1-submission"
+date-released: 2026-10-18
 abstract: "Public reference implementations, tests, deterministic computational validation, frozen result tables, provenance notes, and reviewer-facing documentation for the claim–evidence consistency study. Manuscript and journal-portal files are intentionally excluded from the public reproducibility release."
 keywords:
   - claim verification
