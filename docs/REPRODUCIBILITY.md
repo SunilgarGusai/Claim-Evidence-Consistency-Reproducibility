@@ -29,3 +29,7 @@ This separation prevents the public reproducibility artifact from becoming a dup
 4. `python scripts/generate_figures.py` regenerates reviewer-facing scientific figures from the public plotting functions/results.
 
 Runtime values vary with hardware. Agreement/exactness outcomes and seeded generated-instance logic are the intended reproducible claims.
+
+## Full certificate verification
+
+`src/certificates.py` now provides `build_full_certificate` and `verify_full_certificate`. Unlike the earlier path-only helper, these functions require explicit edge reliability and provenance metadata, verify the accepted support witness and support threshold, and compute contradictory accepted-walk strength against the contradiction threshold. The original `v1.0.0-submission` tag is preserved for provenance; updated code is tested on `main`.
