@@ -49,3 +49,5 @@ src/tree_dp.py,code,Reference algorithm implementation
 src/treewidth_dp.py,code,Reference algorithm implementation
 tests/conftest.py,verification,Reference tests
 tests/test_algorithms.py,verification,Reference tests
+.github/workflows/render-repository-banner.yml,ci,Reproducible export of animated repository artwork
+docs/assets/repository-banner.gif,docs,Animated visual cover generated from SVG master
