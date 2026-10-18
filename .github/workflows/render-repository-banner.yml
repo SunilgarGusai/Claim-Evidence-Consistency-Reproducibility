@@ -1,0 +1,39 @@
+name: Render animated research banner
+on:
+  push:
+    branches: [main, animated-banner-v5]
+    paths:
+      - 'docs/assets/repository-banner.svg'
+      - '.github/workflows/render-repository-banner.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pillow==11.3.0 cairosvg==2.8.2
+      - name: Render animation from scientific SVG master
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/SunilgarGusai/SunilgarGusai/main/.github/scripts/render_research_gifs.py \
+            -o /tmp/render_research_gifs.py
+          python /tmp/render_research_gifs.py \
+            --input docs/assets/repository-banner.svg \
+            --output docs/assets/repository-banner.gif \
+            --repo "${{ github.event.repository.name }}"
+      - name: Commit generated GIF
+        run: |
+          git add docs/assets/repository-banner.gif
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "assets: refresh animated research banner"
+            git push
+          fi

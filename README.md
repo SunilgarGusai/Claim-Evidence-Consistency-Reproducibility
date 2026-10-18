@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/repository-banner.svg" alt="Claim–Evidence Consistency in Labeled Graphs" width="100%" />
+  <img src="docs/assets/repository-banner.gif" alt="Claim–Evidence Consistency in Labeled Graphs" width="100%" />
 </p>
 
 <h1 align="center">Claim–Evidence Consistency in Labeled Graphs</h1>
