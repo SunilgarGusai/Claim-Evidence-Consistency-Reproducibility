@@ -148,3 +148,29 @@ def test_full_certificate_missing_metadata_and_missing_negative_automaton():
     cert=build_full_certificate(c,e,{'u':'x','v':'y'},pos,neg,{'r':.7},{'r':.5})
     assert verify_full_certificate(c,e,cert,pos,neg,{'r':.7},{'r':.5})
     assert not verify_full_certificate(c,e,cert,pos,{}, {'r':.7},{'r':.5})
+
+
+
+def test_parallel_evidence_arcs_preserve_provenance_and_capacity():
+    import copy
+    import pytest
+    from src.automata_support import widest_accepting_walk
+    from src.certificates import build_full_certificate, verify_full_certificate
+    low=('x','a','y','source-low')
+    high=('x','a','y','source-high')
+    graph=EvidenceGraph(('x','y'), (low, high),
+                        reliability={low:.2,high:.9},
+                        provenance={low:'doc-low',high:'doc-high'})
+    nfa=NFA.word(('a',))
+    strength,path=widest_accepting_walk(graph,nfa,'x','y')
+    assert abs(strength-.9)<1e-12 and path is not None
+    claim=ClaimGraph(('u','v'),(('u','r','v'),),{'u':('x',),'v':('y',)})
+    pos={'r':nfa}; neg={'r':NFA.word(('b',))}
+    cert=build_full_certificate(claim,graph,{'u':'x','v':'y'},pos,neg,{'r':.7},{'r':.5})
+    assert cert['entries'][0]['edges'][0]['edge'] == list(high)
+    assert verify_full_certificate(claim,graph,cert,pos,neg,{'r':.7},{'r':.5})
+    tampered=copy.deepcopy(cert)
+    tampered['entries'][0]['edges'][0]['edge']=list(low)
+    assert not verify_full_certificate(claim,graph,tampered,pos,neg,{'r':.7},{'r':.5})
+    with pytest.raises(ValueError):
+        EvidenceGraph(('x','y'),(('x','a','y'),('x','a','y')))
