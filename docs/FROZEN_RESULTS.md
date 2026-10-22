@@ -10,7 +10,7 @@ This document maps the submission-aligned computational statements to committed 
 | Supplied-FVS consistency | 60 / 60 decisions agree with exhaustive search | `results/frozen/fvs_validation.csv` |
 | Weighted tree correction | 60 / 60 optima agree with exhaustive optimization | `results/frozen/correction_validation.csv` |
 | Largest correction discrepancy | < 9 × 10^-16 | `results/frozen/correction_validation.csv` |
-| Reference unit tests | 14 / 14 pass | `tests/test_algorithms.py` |
+| Reference unit tests | 15 / 15 pass | `tests/test_algorithms.py` |
 
 ## Scalability
 
