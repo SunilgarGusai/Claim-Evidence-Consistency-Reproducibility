@@ -4,7 +4,7 @@ from typing import Dict, Hashable, Iterable, List, Mapping, Sequence, Set, Tuple
 
 Node = Hashable
 ClaimArc = Tuple[Node, str, Node]
-EvidenceArc = Tuple[Node, str, Node]
+EvidenceArc = Tuple[Node, str, Node] | Tuple[Node, str, Node, Hashable]
 
 @dataclass(frozen=True)
 class ClaimGraph:
@@ -29,8 +29,20 @@ class EvidenceGraph:
     reliability: Mapping[EvidenceArc, float] = field(default_factory=dict)
     provenance: Mapping[EvidenceArc, str] = field(default_factory=dict)
 
+    def __post_init__(self) -> None:
+        # A four-tuple (source, label, target, arc_id) distinguishes parallel
+        # statements with the same endpoints and label but different provenance.
+        if any(len(a) not in (3, 4) for a in self.arcs):
+            raise ValueError('Evidence arcs must have three or four fields.')
+        if len(set(self.arcs)) != len(self.arcs):
+            raise ValueError('Identical evidence-arc keys require distinct arc IDs.')
+        if any(a[0] not in self.vertices or a[2] not in self.vertices
+               for a in self.arcs):
+            raise ValueError('Evidence arcs must have valid endpoints.')
+
     def adjacency(self) -> Dict[Node, List[Tuple[str, Node]]]:
         out: Dict[Node, List[Tuple[str, Node]]] = {v: [] for v in self.vertices}
-        for u, label, v in self.arcs:
+        for a in self.arcs:
+            u, label, v = a[:3]
             out.setdefault(u, []).append((label, v))
         return out
