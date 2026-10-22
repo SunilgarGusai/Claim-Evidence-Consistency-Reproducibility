@@ -104,12 +104,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.1-submission >/dev/null 2>&1; then
-            echo 'v1.0.1-submission already exists; leaving it unchanged.'
+          if gh release view v1.0.2-submission >/dev/null 2>&1; then
+            echo 'v1.0.2-submission already exists; leaving it unchanged.'
           else
-            gh release create v1.0.1-submission \
+            gh release create v1.0.2-submission \
               --target "$GITHUB_SHA" \
-              --title "v1.0.1-submission" \
+              --title "v1.0.2-submission" \
               --notes "Frozen public computational snapshot aligned with the manuscript submission. Includes reference algorithms, 12 tests, deterministic validation outputs, provenance documentation, and reviewer-facing scientific figures. Journal-submission manuscript files are intentionally excluded."
           fi
 
@@ -119,7 +119,7 @@ jobs:
           echo '- Environment installation: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Curated repository structure: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Python syntax: PASS' >> "$GITHUB_STEP_SUMMARY"
-          echo '- Reference tests: 14/14 PASS' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Reference tests: 15/15 PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Frozen numerical invariants: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Deterministic reproduction: PASS' >> "$GITHUB_STEP_SUMMARY"
           echo '- Scientific figure regeneration: PASS' >> "$GITHUB_STEP_SUMMARY"
