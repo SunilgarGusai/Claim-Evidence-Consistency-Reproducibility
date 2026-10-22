@@ -14,7 +14,7 @@
   <a href="requirements.txt"><img src="https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white" alt="Python 3.12"/></a>
   <a href="CITATION.cff"><img src="https://img.shields.io/badge/citation-CITATION.cff-blue.svg" alt="Citation metadata"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-blue.svg" alt="MIT license"/></a>
-  <img src="https://img.shields.io/badge/tests-14%20passed-success.svg" alt="14 tests passed"/>
+  <img src="https://img.shields.io/badge/tests-15%20passed-success.svg" alt="15 tests passed"/>
   <img src="https://img.shields.io/badge/status-submission--ready-orange.svg" alt="Submission-ready status"/>
 </p>
 
@@ -76,7 +76,7 @@ The upstream extraction of claims, entities, relations, candidate domains, prove
 
 The submission-ready artifact records:
 
-- **14 / 14** unit tests passing;
+- **15 / 15** unit tests passing;
 - **100 / 100** tree consistency decisions agreeing with exhaustive alignment search;
 - **60 / 60** supplied-feedback-set decisions agreeing with exhaustive search;
 - **60 / 60** weighted-correction instances agreeing with exhaustive optimization;
@@ -157,7 +157,7 @@ See [`docs/CLAIM_BOUNDARIES.md`](docs/CLAIM_BOUNDARIES.md) for the complete inte
 
 **Current status: submission-ready reproducibility repository.**
 
-The updated submission snapshot is [`v1.0.1-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.1-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
+The updated submission snapshot is [`v1.0.2-submission`](https://github.com/SunilgarGusai/Claim-Evidence-Consistency-Reproducibility/releases/tag/v1.0.2-submission). Publication metadata and the article DOI can be added after publication. The live `main` branch remains reviewer-facing; the frozen release should be used when citing the exact frozen computational state prepared for submission.
 
 ## Authors
 
@@ -174,3 +174,6 @@ Original project code is released under the [`MIT License`](LICENSE). Synthetic 
 
 
 **Verifier update:** The strict certificate interface checks provenance, reliability thresholds, and the absence of a qualifying contradiction; see `build_full_certificate` and `verify_full_certificate` in `src/certificates.py`. The previous `v1.0.0-submission` remains archived.
+
+
+**Parallel-source evidence:** evidence arc keys can include an explicit fourth field, a unique arc ID. This preserves distinct reliability and provenance for otherwise identical labeled arcs. Three-field arc keys remain supported for simple evidence graphs.
