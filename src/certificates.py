@@ -25,7 +25,7 @@ def verify_certificate(claim: ClaimGraph, evidence: EvidenceGraph,
         return False
     if any(phi[u] not in claim.domains[u] for u in claim.vertices):
         return False
-    evidence_edges = {(u, label, v) for u, label, v in evidence.arcs}
+    evidence_edges = {tuple(a[:3]) for a in evidence.arcs}
     for a in claim.arcs:
         u, relation, v = a
         raw = certificate.get('witnesses', {}).get(repr(a))
@@ -126,7 +126,7 @@ def verify_full_certificate(claim: ClaimGraph, evidence: EvidenceGraph,
             bottleneck=1.0
             for (x,q),(y,q2),record in zip(path,path[1:],edges):
                 arc=tuple(record["edge"])
-                if len(arc)!=3 or arc not in evidence.arcs or arc[0]!=x or arc[2]!=y:
+                if len(arc) not in (3,4) or arc not in evidence.arcs or arc[0]!=x or arc[2]!=y:
                     return False
                 if q2 not in automaton.transitions.get((q,arc[1]),frozenset()):
                     return False
