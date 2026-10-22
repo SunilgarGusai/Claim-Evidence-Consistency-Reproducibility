@@ -52,7 +52,7 @@ def accepting_walk(graph: EvidenceGraph, nfa: NFA, source, target):
 def _weighted_adjacency(graph: EvidenceGraph):
     out = {v: [] for v in graph.vertices}
     for arc in graph.arcs:
-        u, label, v = arc
+        u, label, v = arc[:3]
         out.setdefault(u, []).append((label, v, float(graph.reliability.get(arc, 1.0)), arc))
     return out
 
