@@ -6,7 +6,7 @@ The `main` branch contains the reference algorithms, tests, deterministic experi
 
 ## Frozen reproducibility layer
 
-The `v1.0.1-submission` archival tag preserves the exact public computational snapshot prepared for manuscript submission. Readers and reviewers can use the frozen release when they need an immutable reference rather than the live branch.
+The `v1.0.2-submission` archival tag preserves the exact public computational snapshot prepared for manuscript submission. Readers and reviewers can use the frozen release when they need an immutable reference rather than the live branch.
 
 ## Intentionally excluded from the public repository
 
@@ -32,4 +32,8 @@ Runtime values vary with hardware. Agreement/exactness outcomes and seeded gener
 
 ## Full certificate verification
 
-`src/certificates.py` now provides `build_full_certificate` and `verify_full_certificate`. Unlike the earlier path-only helper, these functions require explicit edge reliability and provenance metadata, verify the accepted support witness and support threshold, and compute contradictory accepted-walk strength against the contradiction threshold. The original `v1.0.1-submission` tag is preserved for provenance; updated code is tested on `main`.
+`src/certificates.py` now provides `build_full_certificate` and `verify_full_certificate`. Unlike the earlier path-only helper, these functions require explicit edge reliability and provenance metadata, verify the accepted support witness and support threshold, and compute contradictory accepted-walk strength against the contradiction threshold. The original `v1.0.2-submission` tag is preserved for provenance; updated code is tested on `main`.
+
+## Parallel evidence arcs
+
+The reference model distinguishes duplicate endpoint-label triples using an optional fourth arc-identifier field. A new regression test confirms that positive certificates identify the correct source and that a lower-reliability parallel assertion cannot be substituted without rejection.
