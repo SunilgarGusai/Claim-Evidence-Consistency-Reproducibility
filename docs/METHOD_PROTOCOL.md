@@ -2,7 +2,7 @@
 
 ## 1. Formal inputs
 
-The reference implementation assumes a finite directed labeled **claim graph** `C`, finite directed labeled **evidence graph** `E`, candidate domain `D(u)` for every claim vertex, and relation-specific support/contradiction automata. Evidence arcs may carry reliability values and provenance identifiers.
+The reference implementation assumes a finite directed labeled **claim graph** `C`, finite directed labeled **evidence graph** `E`, candidate domain `D(u)` for every claim vertex, and relation-specific support/contradiction automata. Evidence arcs may carry reliability values and provenance identifiers. For parallel arcs with the same endpoints and relation label, the implementation accepts four-field keys (source, label, target, arc ID), allowing each source assertion to retain its own reliability and provenance.
 
 The public computational package focuses on the algorithmic layer after these structured inputs exist. Natural-language claim extraction, entity linking, retrieval, source calibration, and relation/automaton construction are outside the formal guarantees.
 
