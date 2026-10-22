@@ -32,7 +32,7 @@ python -m pip install -r requirements.txt
 pytest -q
 ```
 
-Expected submission-aligned outcome: `14 passed`.
+Expected submission-aligned outcome: `15 passed`.
 
 ## 3. Validate the curated public artifact
 
